@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "1a2d3c43-bb35-4d7b-8b79-260705c6ffb1",
+		"name": "EXPORT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21799379"
+	},
+	"item": [
+		{
+			"name": "api-files",
+			"item": [
+				{
+					"name": "Download ProfilePhoto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/profile-photos/download/foto_perfil-ariel.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profile-photos",
+								"download",
+								"foto_perfil-ariel.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload ProfilePhoto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1ef462df-a498-46d0-9bb0-ece228b49548"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/profile-photos/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profile-photos",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
