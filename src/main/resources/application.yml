@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: "files"
+
+bucket:
+  profile-photos: "profile-photos"
