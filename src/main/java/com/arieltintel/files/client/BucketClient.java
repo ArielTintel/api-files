@@ -25,10 +25,10 @@ public class BucketClient {
         );
     }
 
-    public byte[] download(String key, String bucket) {
+    public byte[] download(String profileImagePath, String bucket) {
         GetObjectRequest getObjectRequest = GetObjectRequest.builder()
                 .bucket(bucket)
-                .key(key)
+                .key(profileImagePath)
                 .build();
         return s3Client.getObjectAsBytes(getObjectRequest).asByteArray();
     }

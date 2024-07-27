@@ -10,4 +10,8 @@ services:
       - SERVICES=s3
       - DEBUG=1
     volumes:
-      - "./localstack:/docker-entrypoint-initaws.d"
+      - "localstack:/docker-entrypoint-initaws.d"
+
+volumes:
+  localstack:
+    name: s3

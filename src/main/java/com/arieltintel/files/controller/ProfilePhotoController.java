@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.UUID;
 
 @RequiredArgsConstructor
 @RestController
@@ -15,14 +16,15 @@ public class ProfilePhotoController {
 
     private final ProfilePhotoService profilePhotoService;
 
-    @PostMapping("/upload")
-    public String uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
-        return profilePhotoService.uploadProfilePhoto(file);
+    @PostMapping("/upload/user/{userId}")
+    public String uploadFile(@RequestParam("file") MultipartFile file,
+                             @PathVariable("userId") UUID userId) throws IOException {
+        return profilePhotoService.uploadProfilePhoto(file, userId);
     }
 
-    @GetMapping("/download/{key}")
-    public ResponseEntity<byte[]> downloadFile(@PathVariable String key) {
-        return profilePhotoService.downloadProfilePhoto(key);
+    @GetMapping("/download/user/{userId}")
+    public ResponseEntity<byte[]> downloadFile(@PathVariable("userId") UUID userId) {
+        return profilePhotoService.downloadProfilePhoto(userId);
     }
 
 }
