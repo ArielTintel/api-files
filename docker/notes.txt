@@ -1,5 +1,11 @@
+#Start localstack
+docker-compose -f compose-localstack.yml up -d
+
 #Create bucket
 docker exec -it localstack awslocal s3 mb s3://profile-photos
 
 #list
 docker exec -it localstack awslocal s3 ls
+
+#Start postgres database
+docker-compose -f compose-postgres.yml up -d

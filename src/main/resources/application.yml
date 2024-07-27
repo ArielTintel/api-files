@@ -2,5 +2,19 @@ spring:
   application:
     name: "files"
 
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRESQL_HOST_DATABASE:localhost}:${POSTGRESQL_PORT_DATABASE:5432}/files_db
+    username: ${POSTGRESQL_USER:postgres}
+    password: ${POSTGRESQl_USER_PASSWORD:postgres}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+     hibernate:
+      format_sql: true
+
 bucket:
   profile-photos: "profile-photos"
